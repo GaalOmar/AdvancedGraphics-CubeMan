@@ -1,4 +1,4 @@
 function init() {
-    console.log("App works");
+    console.log("App works - so far");
 }
 //# sourceMappingURL=app.js.map
