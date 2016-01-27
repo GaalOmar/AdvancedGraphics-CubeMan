@@ -1,3 +1,3 @@
-#COMP392-Lesson3-Demo
+#COMP392_Assignment1_CubeMan
 
-COMP392-Lesson3-Demo for COMP392 - Advanced Graphics @ Centennial College
+COMP392_Assignment1_CubeMan
