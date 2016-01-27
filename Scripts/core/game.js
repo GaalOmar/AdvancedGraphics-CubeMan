@@ -24,6 +24,7 @@ var Color = THREE.Color;
 var Vector3 = THREE.Vector3;
 var Face3 = THREE.Face3;
 var Point = objects.Point;
+var CScreen = config.Screen;
 //Custom Game Objects
 var gameObject = objects.gameObject;
 var scene;
@@ -87,9 +88,11 @@ function init() {
     window.addEventListener('resize', onResize, false);
 }
 function onResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = CScreen.RATIO;
+    //camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    //renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(CScreen.WIDTH, CScreen.HEIGHT);
 }
 function addControl(controlObject) {
     //gui.add(controlObject, 'clone');
@@ -114,13 +117,15 @@ function gameLoop() {
 function setupRenderer() {
     renderer = new Renderer();
     renderer.setClearColor(0xEEEEEE, 1.0);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(CScreen.WIDTH, CScreen.HEIGHT);
+    //renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.shadowMap.enabled = true;
     console.log("Finished setting up Renderer...");
 }
 // Setup main camera for the scene
 function setupCamera() {
-    camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera = new PerspectiveCamera(45, CScreen.RATIO, 0.1, 1000);
+    //  camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.x = 0.6;
     camera.position.y = 16;
     camera.position.z = -20.5;
