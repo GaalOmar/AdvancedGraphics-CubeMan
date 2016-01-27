@@ -99,7 +99,7 @@ function init() {
     
     // add controls
     gui = new GUI();
-    control = new Control();
+    control = new Control(0.05);
     addControl(control);
 
     // Add framerate stats
@@ -121,7 +121,7 @@ function onResize(): void {
 }
 
 function addControl(controlObject: Control): void {
-    //gui.add(controlObject, 'clone');
+    gui.add(controlObject, 'rotationSpeed',-0.5,0.5);
 
 }
 
@@ -137,6 +137,8 @@ function addStatsObject() {
 // Setup main game loop
 function gameLoop(): void {
     stats.update();
+
+    cube.rotation.y += control.rotationSpeed;
 
     // render using requestAnimationFrame
     requestAnimationFrame(gameLoop);

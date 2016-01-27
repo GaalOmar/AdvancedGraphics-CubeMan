@@ -4,10 +4,10 @@ module objects {
     // CONTROL CLASS ++++++++++++++++++++++++++++++++++++++++++
     export class Control { 
         //PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++
-       
+       public rotationSpeed:number;
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        constructor() {
-           
+        constructor(rotationSpeed:number) {
+           this.rotationSpeed = rotationSpeed;
         }
         
         //PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++
