@@ -95,7 +95,9 @@ function onResize() {
     renderer.setSize(CScreen.WIDTH, CScreen.HEIGHT);
 }
 function addControl(controlObject) {
-    gui.add(controlObject, 'rotationSpeed', -0.5, 0.5);
+    gui.add(controlObject, 'rotationSpeedx', -0.5, 0.5);
+    gui.add(controlObject, 'rotationSpeedy', -0.5, 0.5);
+    gui.add(controlObject, 'rotationSpeedz', -0.5, 0.5);
 }
 function addStatsObject() {
     stats = new Stats();
@@ -108,7 +110,9 @@ function addStatsObject() {
 // Setup main game loop
 function gameLoop() {
     stats.update();
-    cube.rotation.y += control.rotationSpeed;
+    cube.rotation.x += control.rotationSpeedx;
+    cube.rotation.y += control.rotationSpeedy;
+    cube.rotation.z += control.rotationSpeedz;
     // render using requestAnimationFrame
     requestAnimationFrame(gameLoop);
     // render the scene
