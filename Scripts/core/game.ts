@@ -68,8 +68,8 @@ function init() {
     
     //Add a Plane to the Scene
     plane = new gameObject(
-        new PlaneGeometry(16, 16, 1, 1),
-        new LambertMaterial({ color: 0xe79b61 }),
+        new PlaneGeometry(19.5, 19.5, 1, 1),
+        new LambertMaterial({ color: 0xf99F5B }),
         0, 0, 0);
 
     plane.rotation.x = -0.5 * Math.PI;
@@ -77,31 +77,20 @@ function init() {
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
     
-    //Add a Cube to the Scene
-   // cubeMaterial = new LambertMaterial({color:0x00ff00});
-    //cubeGeometry = new CubeGeometry(2, 2, 2);
-    //cube = new Mesh(cubeGeometry, cubeMaterial);
-   // cube.castShadow = true;
-   // cube.receiveShadow = true;
-   //cube.position.y = 1;
-    
-   // scene.add(cube);
-   // console.log("Added Cube Primitive to scene...");
-    
     //Add a Body
-    cubeMaterial = new LambertMaterial({ color: 0x000000 });
-    cubeGeometry = new CubeGeometry(1.5, 2, 2);
+    cubeMaterial = new LambertMaterial({ color: 0xF8BA8B });
+    cubeGeometry = new CubeGeometry(2, 2.5, 2);
     body = new Mesh(cubeGeometry, cubeMaterial);
     body.castShadow = true;
     body.receiveShadow = true;
-    body.position.y = 3;
+    body.position.y = 4;
 
     scene.add(body);
     console.log("Added Body to scene...");
     
     //Add Left Arm
     cubeMaterial = new LambertMaterial({ color: 0xFF0040 });
-    cubeGeometry = new CubeGeometry(2, 0.5, 0.5);
+    cubeGeometry = new CubeGeometry(3.5, 0.5, 0.5);
     leftArm = new Mesh(cubeGeometry, cubeMaterial);
     leftArm.castShadow = true;
     leftArm.receiveShadow = true;
@@ -114,7 +103,7 @@ function init() {
     
     //Add Right Arm
     cubeMaterial = new LambertMaterial({ color: 0xFF0040});
-    cubeGeometry = new CubeGeometry(2, 0.5, 0.5);
+    cubeGeometry = new CubeGeometry(3.5, 0.5, 0.5);
     rightArm = new Mesh(cubeGeometry, cubeMaterial);
     rightArm.castShadow = true;
     rightArm.receiveShadow = true;
@@ -126,7 +115,7 @@ function init() {
     
     //Add Left Leg
     cubeMaterial = new LambertMaterial({ color: 0xFF0040 });
-    cubeGeometry = new CubeGeometry(0.5, 2, 0.5);
+    cubeGeometry = new CubeGeometry(0.5, 3, 0.5);
     leftLeg = new Mesh(cubeGeometry, cubeMaterial);
     leftLeg.castShadow = true;
     leftLeg.receiveShadow = true;
@@ -138,7 +127,7 @@ function init() {
     
     //Add Right Leg
     cubeMaterial = new LambertMaterial({ color: 0xFF0040 });
-    cubeGeometry = new CubeGeometry(0.5, 2, 0.5);
+    cubeGeometry = new CubeGeometry(0.5, 3, 0.5);
     rightLeg = new Mesh(cubeGeometry, cubeMaterial);
     rightLeg.castShadow = true;
     rightLeg.receiveShadow = true;
@@ -154,7 +143,7 @@ function init() {
     head = new Mesh(cubeGeometry, cubeMaterial);
     head.castShadow = true;
     head.receiveShadow = true;
-    head.position.y = 1.5;
+    head.position.y = 2;
 
     body.add(head);
     console.log("Added Head to scene...");
@@ -162,7 +151,7 @@ function init() {
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x090909);
     scene.add(ambientLight);
-    console.log("Added an Ambient Light to Scene");
+    console.log("Added an Ambient Light to Scene....");
 	
     // Add a SpotLight to the scene
     spotLight = new SpotLight(0xffffff);
@@ -170,7 +159,7 @@ function init() {
     spotLight.rotation.set(-0.8, 42.7, 19.5);
     spotLight.castShadow = true;
     scene.add(spotLight);
-    console.log("Added a SpotLight Light to Scene");
+    console.log("Added a SpotLight Light to Scene...");
     
     // add controls
     gui = new GUI();
