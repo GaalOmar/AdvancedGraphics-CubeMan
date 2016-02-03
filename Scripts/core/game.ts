@@ -162,7 +162,7 @@ function init() {
     console.log("Added Head to scene...");
     
     // Add an AmbientLight to the scene
-    ambientLight = new AmbientLight(0x090909);
+    ambientLight = new AmbientLight(0x404040);
     scene.add(ambientLight);
     console.log("Added an Ambient Light to Scene....");
 	
