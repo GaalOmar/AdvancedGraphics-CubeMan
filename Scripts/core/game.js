@@ -35,7 +35,7 @@ var leftLeg;
 var rightLeg;
 var rightArm;
 var leftArm;
-var body;
+var torso;
 var head;
 var rightShoe;
 var leftShoe;
@@ -63,20 +63,20 @@ function init() {
     plane.rotation.x = -0.5 * Math.PI;
     scene.add(plane);
     console.log("Added Plane Primitive to scene...");
-    //Add a Body
-    body = new Mesh(new CubeGeometry(2, 3, 2), new LambertMaterial({ color: 0xA9F5F2 }));
-    body.castShadow = true;
-    body.receiveShadow = true;
-    body.position.y = 4;
-    scene.add(body);
-    console.log("Added Body to scene...");
+    //Add a Torso
+    torso = new Mesh(new CubeGeometry(2, 3, 2), new LambertMaterial({ color: 0xA9F5F2 }));
+    torso.castShadow = true;
+    torso.receiveShadow = true;
+    torso.position.y = 4;
+    scene.add(torso);
+    console.log("Added Torso to scene...");
     //Add Left Arm
     leftArm = new Mesh(new CubeGeometry(3.5, 0.5, 0.5), new LambertMaterial({ color: 0xF8BA8B }));
     leftArm.castShadow = true;
     leftArm.receiveShadow = true;
     leftArm.position.x = -1;
     leftArm.position.y = 0.5;
-    body.add(leftArm);
+    torso.add(leftArm);
     console.log("Added Left Arm to scene...");
     //Add Right Arm
     rightArm = new Mesh(new CubeGeometry(3.5, 0.5, 0.5), new LambertMaterial({ color: 0xF8BA8B }));
@@ -84,7 +84,7 @@ function init() {
     rightArm.receiveShadow = true;
     rightArm.position.x = 1;
     rightArm.position.y = 0.5;
-    body.add(rightArm);
+    torso.add(rightArm);
     console.log("Added Right Arm to scene...");
     //Add Left Shoe
     leftShoe = new Mesh(new CubeGeometry(0.6, 0.5, 1.3), new LambertMaterial({ color: 0x000000 }));
@@ -93,7 +93,7 @@ function init() {
     leftShoe.position.y = -4;
     leftShoe.position.x = -0.5;
     leftShoe.position.z = -0.5;
-    body.add(leftShoe);
+    torso.add(leftShoe);
     console.log("Added Left Shoe to scene...");
     //Add Left Leg
     leftLeg = new Mesh(new CubeGeometry(0.5, 4.5, 0.5), new LambertMaterial({ color: 0xFF0040 }));
@@ -101,7 +101,7 @@ function init() {
     leftLeg.receiveShadow = true;
     leftLeg.position.y = -1.5;
     leftLeg.position.x = -0.5;
-    body.add(leftLeg);
+    torso.add(leftLeg);
     console.log("Added Left Leg to scene...");
     //Add Right Shoe
     rightShoe = new Mesh(new CubeGeometry(0.6, 0.5, 1.3), new LambertMaterial({ color: 0x000000 }));
@@ -110,7 +110,7 @@ function init() {
     rightShoe.position.y = -4;
     rightShoe.position.x = 0.5;
     rightShoe.position.z = -0.5;
-    body.add(rightShoe);
+    torso.add(rightShoe);
     console.log("Added Right Shoe to scene...");
     //Add Right Leg
     rightLeg = new Mesh(new CubeGeometry(0.5, 4.5, 0.5), new LambertMaterial({ color: 0xFF0040 }));
@@ -118,14 +118,14 @@ function init() {
     rightLeg.receiveShadow = true;
     rightLeg.position.y = -1.5;
     rightLeg.position.x = 0.5;
-    body.add(rightLeg);
+    torso.add(rightLeg);
     console.log("Added Right Leg to scene...");
     //Add Head
     head = new Mesh(new CubeGeometry(1.5, 1.5, 1.5), new LambertMaterial({ color: 0xD8D8D8 }));
     head.castShadow = true;
     head.receiveShadow = true;
     head.position.y = 2;
-    body.add(head);
+    torso.add(head);
     console.log("Added Head to scene...");
     // Add an AmbientLight to the scene
     ambientLight = new AmbientLight(0x404040);
