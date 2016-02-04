@@ -1,5 +1,24 @@
 /// <reference path="_reference.ts"/>
 
+/*
+    Name: Ga-alo Omar 300175123
+    Source File Name: Advanced Graphics 
+    Last Modified by: Ga-alo Omar
+    Date last Modified: Feb 3, 2016
+    Program description: Creating a humanoid character out of various shaped cubes
+    Revision History:
+    Commit 1: Created the visual code file
+    Commit 2-5: Updated the visual code file by adding bits of code
+    Commit 6: Followed the BoilerPlare example from class
+    Commit 7: Added a cube, from class example
+    Commit 8: Added rotation to my cube
+    Commit 9: Added body parts
+    Commit 10: Added colour
+    Commit 11: Fixed the body shape
+    Commit 12: Played with the Ambient Light
+    Commit 13: Added shoes
+    
+*/
 // MAIN GAME FILE
 
 // THREEJS Aliases
@@ -168,8 +187,9 @@ function init() {
 	
     // Add a SpotLight to the scene
     spotLight = new SpotLight(0xffffff);
-    spotLight.position.set(5.6, 23.1, 5.4);
-    spotLight.rotation.set(-0.8, 42.7, 19.5);
+    spotLight.position.set(-40, 60, 10);
+    //spotLight.position.set(5.6, 23.1, 5.4);
+   // spotLight.rotation.set(-0.8, 42.7, 19.5);
     spotLight.castShadow = true;
     scene.add(spotLight);
     console.log("Added a SpotLight Light to Scene...");
@@ -201,6 +221,7 @@ function addControl(controlObject: Control): void {
     gui.add(controlObject, 'rotationSpeedx',-0.5,0.5);
     gui.add(controlObject, 'rotationSpeedy',-0.5,0.5);
     gui.add(controlObject, 'rotationSpeedz',-0.5,0.5);
+    gui.add(controlObject, 'randomColour');
 
 }
 
@@ -217,9 +238,9 @@ function addStatsObject() {
 function gameLoop(): void {
     stats.update();
 
-    body.rotation.x += control.rotationSpeedx;
-    body.rotation.y += control.rotationSpeedy;
-    body.rotation.z += control.rotationSpeedz;
+    torso.rotation.x += control.rotationSpeedx;
+    torso.rotation.y += control.rotationSpeedy;
+    torso.rotation.z += control.rotationSpeedz;
 
     // render using requestAnimationFrame
     requestAnimationFrame(gameLoop);
